@@ -19,7 +19,7 @@ public class Test {
     private String question;
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Answer> answers;
-    @OneToOne(optional = true)
+    @OneToOne
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
 }

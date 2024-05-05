@@ -19,5 +19,7 @@ public class Word {
     private String wordInRussian;
     @Column(name = "transcription")
     private String transcription;
-    //id_partOfSpeech;
+    @ManyToOne
+    @JoinColumn(name = "part_of_speech_id")
+    private PartOfSpeech partOfSpeech;
 }
