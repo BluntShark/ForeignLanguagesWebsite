@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Entity
-@Table(name = "word")
+@Table(name = "part_of_speech")
 public class PartOfSpeech {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

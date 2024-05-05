@@ -13,7 +13,7 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "word_in_japanese")
+    @Column(name = "word_in_japanese", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String wordInJapanese;
     @Column(name = "word_in_russian")
     private String wordInRussian;
