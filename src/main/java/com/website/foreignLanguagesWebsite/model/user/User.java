@@ -21,5 +21,5 @@ public class User {
     private String password;
     @Column(name = "count_of_competed_tests")
     private Integer countOfCompletedTests;
-    //id_languageLevel;
+    //id_languageLevellll;
 }
