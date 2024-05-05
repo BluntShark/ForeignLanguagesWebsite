@@ -11,15 +11,17 @@ import lombok.Data;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "login", nullable=false)
-    private String login;
-    @Column(name = "email", nullable=false)
+    @Column(name = "user_name")
+    private String username;
+    @Column(name = "email")
     private String email;
-    @Column(name = "password", nullable=false)
+    @Column(name = "password")
     private String password;
     @Column(name = "count_of_competed_tests")
     private Integer countOfCompletedTests;
-    //id_languageLevel;
+    @ManyToOne
+    @JoinColumn(name = "language_level_id")
+    private LanguageLevel languageLevel;
 }
