@@ -18,10 +18,8 @@ public class Test {
     private Long id;
     @Column(name = "question")
     private String question;
-
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Answer> answers;
-
     @OneToOne(optional = true)
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
