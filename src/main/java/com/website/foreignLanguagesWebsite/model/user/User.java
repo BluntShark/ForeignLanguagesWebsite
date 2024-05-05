@@ -22,6 +22,4 @@ public class User {
     @Column(name = "count_of_competed_tests")
     private Integer countOfCompletedTests;
     //id_languageLevel;
-    //приветики
-    private String b;
 }
