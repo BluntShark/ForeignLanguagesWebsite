@@ -16,7 +16,7 @@ public class PartOfSpeech {
     @Column(name = "id")
     private Long id;
     @Column(name = "part_of_speech")
-    private Long partOfSpeech;
+    private String partOfSpeech;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "partOfSpeech") //если удалить часть речи - удалится и слово
     private List<Word> words;
 }
