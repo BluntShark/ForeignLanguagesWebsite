@@ -3,6 +3,7 @@ package com.website.foreignLanguagesWebsite.service.impl;
 import com.website.foreignLanguagesWebsite.dto.PartOfSpeechDto;
 import com.website.foreignLanguagesWebsite.entity.word.PartOfSpeech;
 import com.website.foreignLanguagesWebsite.entity.word.Word;
+import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.PartOfSpeechMapper;
 import com.website.foreignLanguagesWebsite.mapper.WordMapper;
 import com.website.foreignLanguagesWebsite.repository.PartOfSpeechRepository;
@@ -20,5 +21,12 @@ public class PartOfSpeechServiceImpl implements PartOfSpeechService {
                 .mapToPartOfSpeechDto(partOfSpeechRepository
                 .save(PartOfSpeechMapper
                 .mapToPartOfSpeech(partOfSpeechDto)));
+    }
+
+    @Override
+    public PartOfSpeechDto getPartOfSpeechById(Long partOfSpeechId) {
+        PartOfSpeech partOfSpeech = partOfSpeechRepository.findById(partOfSpeechId)
+                .orElseThrow(() -> new ResourceNotFoundException("Part of speech is not exists with given id: " + partOfSpeechId));
+        return PartOfSpeechMapper.mapToPartOfSpeechDto(partOfSpeech);
     }
 }
