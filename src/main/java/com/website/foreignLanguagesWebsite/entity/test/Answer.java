@@ -1,11 +1,8 @@
-package com.website.foreignLanguagesWebsite.model.test;
+package com.website.foreignLanguagesWebsite.entity.test;
 
-import com.website.foreignLanguagesWebsite.model.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor

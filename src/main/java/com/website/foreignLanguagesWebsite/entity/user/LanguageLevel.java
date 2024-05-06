@@ -1,4 +1,4 @@
-package com.website.foreignLanguagesWebsite.model.user;
+package com.website.foreignLanguagesWebsite.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,5 +1,6 @@
-package com.website.foreignLanguagesWebsite.model.test;
+package com.website.foreignLanguagesWebsite.entity.test;
 
+import com.website.foreignLanguagesWebsite.entity.lesson.Lesson;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,4 +23,9 @@ public class Test {
     @OneToOne
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
+//    @OneToOne
+//    @JoinColumn(name="lesson_id")
+//    private Lesson lesson;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "test")
+    private Lesson lesson;
 }
