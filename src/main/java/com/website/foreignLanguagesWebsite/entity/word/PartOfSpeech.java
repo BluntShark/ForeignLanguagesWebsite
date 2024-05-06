@@ -21,4 +21,8 @@ public class PartOfSpeech {
     private String partOfSpeech;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "partOfSpeech") //если удалить часть речи - удалится и слово
     private List<Word> words;
+    public PartOfSpeech(Long id, String partOfSpeech) {
+        this.id = id;
+        this.partOfSpeech = partOfSpeech;
+    }
 }

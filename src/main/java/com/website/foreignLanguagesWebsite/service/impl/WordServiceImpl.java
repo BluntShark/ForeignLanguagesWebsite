@@ -14,8 +14,9 @@ public class WordServiceImpl implements WordService {
     private WordRepository wordRepository;
     @Override
     public WordDto createWord(WordDto wordDto) {
-        Word word = WordMapper.mapToWord(wordDto);
-        Word savedWord = wordRepository.save(word);
-        return WordMapper.mapToWordDto(savedWord);
+        return WordMapper
+                .mapToWordDto(wordRepository
+                .save(WordMapper
+                .mapToWord(wordDto)));
     }
 }
