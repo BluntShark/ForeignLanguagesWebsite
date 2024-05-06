@@ -1,11 +1,14 @@
 package com.website.foreignLanguagesWebsite.controller;
 
+import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.WordService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -19,6 +22,10 @@ public class WordController {
     @GetMapping("{id}")
     public ResponseEntity<WordDto> getWordById(@PathVariable("id") Long word){
         return ResponseEntity.ok(wordService.getWordById(word));
+    }
+    @GetMapping
+    public ResponseEntity<List<WordDto>> getAllWords(){
+        return ResponseEntity.ok(wordService.getAllWords());
     }
 }
 
