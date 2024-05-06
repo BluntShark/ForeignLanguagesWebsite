@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.userentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
@@ -28,6 +29,7 @@ public class User {
     @Column(name = "password")
     private String password;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel;
     @ManyToMany
@@ -52,4 +54,12 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "test_id", referencedColumnName = "id"))
     private Set<Test> completedTests = new HashSet<>();
+
+    public User(Long id, String username, String email, String password, LanguageLevel languageLevel) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.languageLevel = languageLevel;
+    }
 }

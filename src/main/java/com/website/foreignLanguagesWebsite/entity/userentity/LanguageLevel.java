@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.userentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class LanguageLevel {
     @Column(name = "description", nullable=false)
     private String description;
     @OneToMany(mappedBy = "languageLevel")
+    @JsonIgnore
     private List<User> users;
 }

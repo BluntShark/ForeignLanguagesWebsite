@@ -18,7 +18,7 @@ public class WordController {
     }
     @GetMapping("{id}")
     public ResponseEntity<WordDto> getWordById(@PathVariable("id") Long word){
-        return ResponseEntity.ok(wordService.getWordDtoById(word));
+        return ResponseEntity.ok(wordService.getWordById(word));
     }
 }
 

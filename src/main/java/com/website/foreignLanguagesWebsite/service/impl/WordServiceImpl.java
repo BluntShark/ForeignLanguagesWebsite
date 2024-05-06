@@ -16,14 +16,14 @@ public class WordServiceImpl implements WordService {
     public WordDto createWord(WordDto wordDto) {
         return WordMapper
                 .mapToWordDto(wordRepository
-                .save(WordMapper
-                .mapToWord(wordDto)));
+                        .save(WordMapper
+                                .mapToWord(wordDto)));
     }
 
     @Override
-    public WordDto getWordDtoById(Long wordId) {
+    public WordDto getWordById(Long wordId) {
         return WordMapper.mapToWordDto(wordRepository.findById(wordId)
                 .orElseThrow(() ->
-                        new ResourceNotFoundException("Part of speech is not exists with given id: " + wordRepository)));
+                        new ResourceNotFoundException("Part of speech is not exists with given id: " + wordId)));
     }
 }
