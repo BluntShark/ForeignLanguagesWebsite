@@ -10,8 +10,7 @@ public class WordMapper {
                 word.getWordInJapanese(),
                 word.getWordInRussian(),
                 word.getTranscription(),
-                word.getPartOfSpeech(),
-                word.getUsers()
+                word.getPartOfSpeech()
         );
     }
     public static Word mapToWord(WordDto wordDto){
@@ -20,8 +19,7 @@ public class WordMapper {
                 wordDto.getWordInJapanese(),
                 wordDto.getWordInRussian(),
                 wordDto.getTranscription(),
-                wordDto.getPartOfSpeech(),
-                wordDto.getUsers()
+                wordDto.getPartOfSpeech()
         );
     }
 }

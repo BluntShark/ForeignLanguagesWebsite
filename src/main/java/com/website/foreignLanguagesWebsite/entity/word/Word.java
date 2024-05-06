@@ -33,4 +33,11 @@ public class Word {
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     private Set<User> users = new HashSet<>();
+
+    public Word(Long id, String wordInJapanese, String wordInRussian, String transcription, PartOfSpeech partOfSpeech) {
+        this.wordInJapanese = wordInJapanese;
+        this.wordInRussian = wordInRussian;
+        this.transcription = transcription;
+        this.partOfSpeech = partOfSpeech;
+    }
 }

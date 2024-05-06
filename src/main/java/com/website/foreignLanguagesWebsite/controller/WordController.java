@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/words")
+@RequestMapping("/words")
 public class WordController {
     private WordService wordService;
     @PostMapping
-    public ResponseEntity<WordDto> createWord(@RequestBody WordDto wordDto){
+    public ResponseEntity<WordDto> createWord(@RequestBody WordDto wordDto) {
         WordDto savedWord = wordService.createWord(wordDto);
-        return  new ResponseEntity<>(savedWord, HttpStatus.CREATED);
+        return new ResponseEntity<>(savedWord, HttpStatus.CREATED);
     }
 }
 

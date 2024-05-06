@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,5 +17,4 @@ public class WordDto {
     private String wordInRussian;
     private String transcription;
     private PartOfSpeech partOfSpeech;
-    private Set<User> users = new HashSet<>();
 }
