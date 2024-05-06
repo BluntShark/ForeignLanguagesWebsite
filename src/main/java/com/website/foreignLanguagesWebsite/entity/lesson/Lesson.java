@@ -29,6 +29,10 @@ public class Lesson {
     private Date dateOfCreation;
     @Column(name = "duration")
     private Duration duration;
+    @Column(name = "is_completed")
+    private Boolean isCompleted;
+    @Column(name = "is_viewed")
+    private Boolean isViewed;
     @ManyToOne
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;

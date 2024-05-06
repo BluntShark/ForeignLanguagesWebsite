@@ -27,4 +27,6 @@ public class Test {
     private Answer correctAnswer;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "test")
     private Lesson lesson;
+    @Column(name = "is_completed")
+    private Boolean isCompleted;
 }
