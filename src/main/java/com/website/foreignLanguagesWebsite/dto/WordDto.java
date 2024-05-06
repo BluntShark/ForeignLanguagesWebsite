@@ -1,6 +1,6 @@
 package com.website.foreignLanguagesWebsite.dto;
 
-import com.website.foreignLanguagesWebsite.entity.word.PartOfSpeech;
+import com.website.foreignLanguagesWebsite.entity.wordentity.PartOfSpeech;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

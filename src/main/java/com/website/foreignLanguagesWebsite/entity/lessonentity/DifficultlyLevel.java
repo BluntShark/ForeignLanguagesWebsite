@@ -1,4 +1,4 @@
-package com.website.foreignLanguagesWebsite.entity.lesson;
+package com.website.foreignLanguagesWebsite.entity.lessonentity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

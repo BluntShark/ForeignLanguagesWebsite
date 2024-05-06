@@ -14,8 +14,11 @@ public class WordController {
     private WordService wordService;
     @PostMapping
     public ResponseEntity<WordDto> createWord(@RequestBody WordDto wordDto) {
-        WordDto savedWord = wordService.createWord(wordDto);
-        return new ResponseEntity<>(savedWord, HttpStatus.CREATED);
+        return new ResponseEntity<>(wordService.createWord(wordDto), HttpStatus.CREATED);
+    }
+    @GetMapping("{id}")
+    public ResponseEntity<WordDto> getWordById(@PathVariable("id") Long word){
+        return ResponseEntity.ok(wordService.getWordDtoById(word));
     }
 }
 

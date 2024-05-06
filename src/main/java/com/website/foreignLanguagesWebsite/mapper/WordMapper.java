@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.WordDto;
-import com.website.foreignLanguagesWebsite.entity.word.Word;
+import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 
 public class WordMapper {
     public static WordDto mapToWordDto(Word word){

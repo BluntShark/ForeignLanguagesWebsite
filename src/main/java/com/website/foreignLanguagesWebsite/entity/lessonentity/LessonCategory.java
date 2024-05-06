@@ -1,4 +1,4 @@
-package com.website.foreignLanguagesWebsite.entity.user;
+package com.website.foreignLanguagesWebsite.entity.lessonentity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,16 +11,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "languagelevel")
-public class LanguageLevel {
+@Table(name = "lessoncategory")
+public class LessonCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title", nullable=false)
+    @Column(name = "title")
     private String title;
-    @Column(name = "description", nullable=false)
+    @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "languageLevel")
-    private List<User> users;
+    @OneToMany(mappedBy = "lessonCategory")
+    private List<Lesson> lessons;
 }

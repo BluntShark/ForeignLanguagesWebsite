@@ -4,4 +4,5 @@ import com.website.foreignLanguagesWebsite.dto.WordDto;
 
 public interface WordService {
     WordDto createWord(WordDto wordDto);
+    WordDto getWordDtoById(Long wordId);
 }

@@ -1,9 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.PartOfSpeechDto;
-import com.website.foreignLanguagesWebsite.dto.WordDto;
-import com.website.foreignLanguagesWebsite.entity.word.PartOfSpeech;
-import com.website.foreignLanguagesWebsite.entity.word.Word;
+import com.website.foreignLanguagesWebsite.entity.wordentity.PartOfSpeech;
 
 public class PartOfSpeechMapper {
     public static PartOfSpeechDto mapToPartOfSpeechDto(PartOfSpeech partOfSpeech){

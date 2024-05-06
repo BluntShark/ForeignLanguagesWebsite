@@ -14,12 +14,10 @@ public class PartOfSpeechController {
     private PartOfSpeechService partOfSpeechService;
     @PostMapping
     public ResponseEntity<PartOfSpeechDto> createPartOfSpeech(@RequestBody PartOfSpeechDto partOfSpeechDto) {
-        PartOfSpeechDto savedPartOfSpeechDto = partOfSpeechService.createPartOfSpeech(partOfSpeechDto);
-        return new ResponseEntity<>(savedPartOfSpeechDto, HttpStatus.CREATED);
+        return new ResponseEntity<>(partOfSpeechService.createPartOfSpeech(partOfSpeechDto), HttpStatus.CREATED);
     }
     @GetMapping("{id}")
     public ResponseEntity<PartOfSpeechDto> getPartOfSpeechById(@PathVariable("id") Long partOfSpeech){
-        PartOfSpeechDto partOfSpeechDto = partOfSpeechService.getPartOfSpeechById(partOfSpeech);
-        return ResponseEntity.ok(partOfSpeechDto);
+        return ResponseEntity.ok(partOfSpeechService.getPartOfSpeechById(partOfSpeech));
     }
 }
