@@ -1,10 +1,7 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.WordDto;
-import com.website.foreignLanguagesWebsite.entity.wordentity.PartOfSpeech;
-import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
-import com.website.foreignLanguagesWebsite.mapper.PartOfSpeechMapper;
 import com.website.foreignLanguagesWebsite.mapper.WordMapper;
 import com.website.foreignLanguagesWebsite.repository.WordRepository;
 import com.website.foreignLanguagesWebsite.service.WordService;
