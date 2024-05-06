@@ -3,9 +3,11 @@ package com.website.foreignLanguagesWebsite.entity.test;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "answer")
 public class Answer {
