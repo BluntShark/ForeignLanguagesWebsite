@@ -32,5 +32,5 @@ public class Word {
     @JoinTable(name = "userword",
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-    private Set<User> users = new HashSet<User>();
+    private Set<User> users = new HashSet<>();
 }

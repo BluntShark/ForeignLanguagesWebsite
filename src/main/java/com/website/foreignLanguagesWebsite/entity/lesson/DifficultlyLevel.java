@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.entity.lesson;
 
-import com.website.foreignLanguagesWebsite.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
