@@ -34,8 +34,6 @@ public class Lesson {
     @ManyToOne
     @JoinColumn(name = "lesson_category_id")
     private LessonCategory lessonCategory;
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "lesson")
-//    private Test test;
     @OneToOne
     @JoinColumn(name="test_id")
     private Test test;

@@ -1,8 +1,12 @@
 package com.website.foreignLanguagesWebsite.entity.word;
 
+import com.website.foreignLanguagesWebsite.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +26,9 @@ public class Word {
     @ManyToOne
     @JoinColumn(name = "part_of_speech_id")
     private PartOfSpeech partOfSpeech;
+    @ManyToMany
+    @JoinTable(name = "userword",
+            joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+    private Set<User> users = new HashSet<User>();
 }
