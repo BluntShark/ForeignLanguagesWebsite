@@ -1,9 +1,11 @@
 package com.website.foreignLanguagesWebsite.entity.wordentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
@@ -12,6 +14,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 @Entity
 @Table(name = "word")
 public class Word {
@@ -29,6 +32,7 @@ public class Word {
     @JoinColumn(name = "part_of_speech_id")
     private PartOfSpeech partOfSpeech;
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "userword",
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))

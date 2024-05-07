@@ -9,7 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -33,6 +35,7 @@ public class User {
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel;
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "userword",
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"))

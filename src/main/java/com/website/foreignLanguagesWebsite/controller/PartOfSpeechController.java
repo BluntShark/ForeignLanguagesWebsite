@@ -11,7 +11,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/partOfSpeech")
+@RequestMapping("/partOfSpeeches")
 public class PartOfSpeechController {
     private PartOfSpeechService partOfSpeechService;
     @PostMapping

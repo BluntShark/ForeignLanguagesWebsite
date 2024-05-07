@@ -1,7 +1,6 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
-import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.UserMapper;
 import com.website.foreignLanguagesWebsite.repository.UserRepository;
@@ -10,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
