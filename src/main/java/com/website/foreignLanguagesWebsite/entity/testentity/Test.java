@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.testentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class Test {
     @Column(name = "question")
     private String question;
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Answer> answers;
     @OneToOne
     @JoinColumn(name = "correct_answer_id")

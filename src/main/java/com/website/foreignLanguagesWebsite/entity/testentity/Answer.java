@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.testentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class Answer {
     @Column(name = "answer")
     private String answer;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "test_id")
     private Test test;
 }
