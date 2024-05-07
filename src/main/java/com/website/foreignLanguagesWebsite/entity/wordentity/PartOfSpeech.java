@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.wordentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class PartOfSpeech {
     @Column(name = "part_of_speech")
     private String partOfSpeech;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "partOfSpeech") //если удалить часть речи - удалится и слово
+    @JsonIgnore
     private List<Word> words;
     public PartOfSpeech(Long id, String partOfSpeech) {
         this.id = id;

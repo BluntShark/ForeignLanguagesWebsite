@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.controller;
 
-import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.WordService;
 import lombok.AllArgsConstructor;

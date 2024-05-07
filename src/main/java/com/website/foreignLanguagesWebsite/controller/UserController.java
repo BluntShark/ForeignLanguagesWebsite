@@ -1,7 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
-import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
