@@ -8,6 +8,9 @@ import com.website.foreignLanguagesWebsite.service.PartOfSpeechService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class PartOfSpeechServiceImpl implements PartOfSpeechService {
@@ -25,5 +28,10 @@ public class PartOfSpeechServiceImpl implements PartOfSpeechService {
         return PartOfSpeechMapper.mapToPartOfSpeechDto(partOfSpeechRepository.findById(partOfSpeechId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Word is not exists with given id: " + partOfSpeechId)));
+    }
+
+    @Override
+    public List<PartOfSpeechDto> getAllPartOfSpeeches() {
+        return partOfSpeechRepository.findAll().stream().map((part) -> PartOfSpeechMapper.mapToPartOfSpeechDto(part)).collect(Collectors.toList());
     }
 }

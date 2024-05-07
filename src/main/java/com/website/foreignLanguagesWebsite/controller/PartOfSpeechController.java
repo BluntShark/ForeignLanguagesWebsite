@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/partOfSpeech")
@@ -19,5 +21,9 @@ public class PartOfSpeechController {
     @GetMapping("{id}")
     public ResponseEntity<PartOfSpeechDto> getPartOfSpeechById(@PathVariable("id") Long partOfSpeech){
         return ResponseEntity.ok(partOfSpeechService.getPartOfSpeechById(partOfSpeech));
+    }
+    @GetMapping
+    public ResponseEntity<List<PartOfSpeechDto>> getAllPartOfSpeeches(){
+        return ResponseEntity.ok(partOfSpeechService.getAllPartOfSpeeches());
     }
 }
