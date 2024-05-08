@@ -1,13 +1,8 @@
 package com.website.foreignLanguagesWebsite.controller;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
-import com.website.foreignLanguagesWebsite.entity.userentity.User;
-import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
-import com.website.foreignLanguagesWebsite.repository.UserRepository;
 import com.website.foreignLanguagesWebsite.service.UserService;
-import com.website.foreignLanguagesWebsite.service.impl.UserServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +14,6 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
     private UserService userService;
-    private UserServiceImpl userServiceImpl;
 
     @PostMapping
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {

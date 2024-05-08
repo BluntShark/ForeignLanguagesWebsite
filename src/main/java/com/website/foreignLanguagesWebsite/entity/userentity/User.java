@@ -58,11 +58,12 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "test_id", referencedColumnName = "id"))
     private Set<Test> completedTests = new HashSet<>();
 
-    public User(Long id, String username, String email, String password, LanguageLevel languageLevel) {
+    public User(Long id, String username, String email, String password, LanguageLevel languageLevel, Set<Word> words) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.languageLevel = languageLevel;
+        this.words = words;
     }
 }

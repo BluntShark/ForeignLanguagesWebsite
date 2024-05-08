@@ -39,6 +39,7 @@ public class Word {
     private Set<User> users = new HashSet<>();
 
     public Word(Long id, String wordInJapanese, String wordInRussian, String transcription, PartOfSpeech partOfSpeech) {
+        this.id = id;
         this.wordInJapanese = wordInJapanese;
         this.wordInRussian = wordInRussian;
         this.transcription = transcription;
