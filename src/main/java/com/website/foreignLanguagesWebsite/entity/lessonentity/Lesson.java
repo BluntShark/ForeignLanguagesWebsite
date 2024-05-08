@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.time.Duration;
 import java.util.Date;
 
@@ -28,7 +29,7 @@ public class Lesson {
     @Column(name = "date_of_creation")
     private Date dateOfCreation;
     @Column(name = "duration")
-    private Duration duration;
+    private Time duration;
     @Column(name = "is_completed")
     private Boolean isCompleted;
     @Column(name = "is_viewed")
@@ -42,4 +43,16 @@ public class Lesson {
     @OneToOne
     @JoinColumn(name="test_id")
     private Test test;
+
+    public Lesson(Long id, String title, String description, String content, Date dateOfCreation,
+                  Time duration, DifficultlyLevel difficultlyLevel, LessonCategory lessonCategory) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.content = content;
+        this.dateOfCreation = dateOfCreation;
+        this.duration = duration;
+        this.difficultlyLevel = difficultlyLevel;
+        this.lessonCategory = lessonCategory;
+    }
 }
