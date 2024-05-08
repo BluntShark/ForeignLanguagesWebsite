@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.lessonentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +21,6 @@ public class DifficultlyLevel {
     @Column(name = "level")
     private String level;
     @OneToMany(mappedBy = "difficultlyLevel")
+    @JsonIgnore
     private List<Lesson> lessons;
 }

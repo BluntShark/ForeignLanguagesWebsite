@@ -25,6 +25,7 @@ public class Test {
     @JsonIgnore
     private List<Answer> answers;
     @OneToOne
+    @JsonIgnore
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "test")
