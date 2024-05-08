@@ -7,7 +7,7 @@ public class WordMapper {
     public static WordDto mapToWordDto(Word word){
         return new WordDto(
                 word.getId(),
-                word.getWordInJapanese(),
+                word.getJapaneseWord(),
                 word.getWordInRussian(),
                 word.getTranscription(),
                 word.getPartOfSpeech()
@@ -16,7 +16,7 @@ public class WordMapper {
     public static Word mapToWord(WordDto wordDto){
         return new Word(
                 wordDto.getId(),
-                wordDto.getWordInJapanese(),
+                wordDto.getJapaneseWord(),
                 wordDto.getWordInRussian(),
                 wordDto.getTranscription(),
                 wordDto.getPartOfSpeech()

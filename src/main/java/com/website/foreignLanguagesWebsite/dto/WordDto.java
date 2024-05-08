@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.dto;
 
+import com.website.foreignLanguagesWebsite.entity.wordentity.JapaneseWord;
 import com.website.foreignLanguagesWebsite.entity.wordentity.PartOfSpeech;
 import lombok.*;
 
@@ -10,7 +11,7 @@ import lombok.*;
 @EqualsAndHashCode
 public class WordDto {
     private Long id;
-    private String wordInJapanese;
+    private JapaneseWord japaneseWord;
     private String wordInRussian;
     private String transcription;
     private PartOfSpeech partOfSpeech;

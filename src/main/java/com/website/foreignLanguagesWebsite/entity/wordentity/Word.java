@@ -22,15 +22,18 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "word_in_japanese", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
-    private String wordInJapanese;
-    @Column(name = "word_in_russian")
+    @Column(name = "word_in_russian", nullable = false)
     private String wordInRussian;
-    @Column(name = "transcription")
+    @Column(name = "transcription", nullable = false)
     private String transcription;
     @ManyToOne
-    @JoinColumn(name = "part_of_speech_id")
+    @JsonIgnore
+    @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;
+    @OneToOne
+    @JsonIgnore
+    @JoinColumn(name = "word_in_japanese_id", nullable = false)
+    private JapaneseWord japaneseWord;
     @ManyToMany
     @JsonIgnore
     @JoinTable(name = "userword",
@@ -38,9 +41,9 @@ public class Word {
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     private Set<User> users = new HashSet<>();
 
-    public Word(Long id, String wordInJapanese, String wordInRussian, String transcription, PartOfSpeech partOfSpeech) {
+    public Word(Long id, JapaneseWord japaneseWord, String wordInRussian, String transcription, PartOfSpeech partOfSpeech) {
         this.id = id;
-        this.wordInJapanese = wordInJapanese;
+        this.japaneseWord = japaneseWord;
         this.wordInRussian = wordInRussian;
         this.transcription = transcription;
         this.partOfSpeech = partOfSpeech;
