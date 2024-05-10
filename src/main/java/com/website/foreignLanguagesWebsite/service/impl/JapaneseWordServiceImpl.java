@@ -33,8 +33,7 @@ public class JapaneseWordServiceImpl implements JapaneseWordService {
 
     @Override
     public List<JapaneseWordDto> getAllJapaneseWords() {
-        return japaneseWordRepository.findAll().stream().map((word) ->
-                JapaneseWordMapper.mapToJapaneseWordDto(word)).collect(Collectors.toList());
+        return japaneseWordRepository.findAll().stream().map(JapaneseWordMapper::mapToJapaneseWordDto).collect(Collectors.toList());
     }
 
     @Override

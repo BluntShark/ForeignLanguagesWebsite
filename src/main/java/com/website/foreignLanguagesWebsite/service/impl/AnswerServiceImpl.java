@@ -33,7 +33,7 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Override
     public List<AnswerDto> getAllAnswers() {
-        return answerRepository.findAll().stream().map((answer) -> AnswerMapper.mapToAnswerDto(answer)).collect(Collectors.toList());
+        return answerRepository.findAll().stream().map(AnswerMapper::mapToAnswerDto).collect(Collectors.toList());
     }
 
     @Override
