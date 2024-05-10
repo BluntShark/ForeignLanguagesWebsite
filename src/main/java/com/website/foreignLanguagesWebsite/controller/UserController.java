@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
+import com.website.foreignLanguagesWebsite.dto.AnswerDto;
 import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,16 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserDto>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable("id") Long id,
+                                                  @RequestBody UserDto userDto){
+        return ResponseEntity.ok(userService.updateUser(id, userDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable("id") Long id){
+        userService.deleteUser(id);
+        return ResponseEntity.ok("User delete successfully");
     }
 
     //    @GetMapping("/byWordId/{id}")

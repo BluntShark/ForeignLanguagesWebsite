@@ -21,7 +21,7 @@ public class DifficultlyLevel {
     private Long id;
     @Column(name = "level")
     private String level;
-    @OneToMany(mappedBy = "difficultlyLevel")
+    @OneToMany(mappedBy = "difficultlyLevel", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private List<Lesson> lessons;
 }

@@ -22,6 +22,6 @@ public class LessonCategory {
     private String title;
     @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "lessonCategory")
+    @OneToMany(mappedBy = "lessonCategory", cascade = CascadeType.PERSIST)
     private List<Lesson> lessons;
 }

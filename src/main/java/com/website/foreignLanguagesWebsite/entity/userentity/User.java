@@ -29,7 +29,7 @@ public class User {
     private String email;
     @Column(name = "password")
     private String password;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel;
