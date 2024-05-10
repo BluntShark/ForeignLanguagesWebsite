@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -26,7 +25,7 @@ public class JapaneseWord {
     private String katakana;
     @Column(name = "kanji", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String kanji;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "japaneseWord")
+    @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "japaneseWord")
     @JsonIgnore
     private Word words;
 }

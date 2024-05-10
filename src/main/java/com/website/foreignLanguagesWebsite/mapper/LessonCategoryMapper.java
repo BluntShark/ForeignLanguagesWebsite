@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.LessonCategoryDto;
-import com.website.foreignLanguagesWebsite.entity.lessonentity.LessonCategory;
+import com.website.foreignLanguagesWebsite.entity.reference.LessonCategory;
 
 public class LessonCategoryMapper {
     public static LessonCategoryDto mapToLessonCategoryDto(LessonCategory lessonCategory){

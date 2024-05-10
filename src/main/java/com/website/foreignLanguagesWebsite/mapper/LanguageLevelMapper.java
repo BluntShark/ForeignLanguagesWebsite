@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.LanguageLevelDto;
-import com.website.foreignLanguagesWebsite.entity.userentity.LanguageLevel;
+import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
 
 public class LanguageLevelMapper {
     public static LanguageLevelDto mapToLanguageLevelDto(LanguageLevel languageLevel){

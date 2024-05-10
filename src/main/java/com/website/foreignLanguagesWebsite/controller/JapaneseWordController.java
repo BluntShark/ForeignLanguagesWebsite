@@ -1,7 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
 import com.website.foreignLanguagesWebsite.dto.JapaneseWordDto;
-import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.JapaneseWordService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,5 +25,15 @@ public class JapaneseWordController {
     @GetMapping
     public ResponseEntity<List<JapaneseWordDto>> getAllJapaneseWords(){
         return ResponseEntity.ok(japaneseWordService.getAllJapaneseWords());
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<JapaneseWordDto> updateJapaneseWord(@PathVariable("id") Long id,
+                                                  @RequestBody JapaneseWordDto japaneseWordDto){
+        return ResponseEntity.ok(japaneseWordService.updateJapaneseWord(id, japaneseWordDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteJapaneseWord(@PathVariable("id") Long id){
+        japaneseWordService.deleteJapaneseWord(id);
+        return ResponseEntity.ok("Japanese word delete successfully");
     }
 }

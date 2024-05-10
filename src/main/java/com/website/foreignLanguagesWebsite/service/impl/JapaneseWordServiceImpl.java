@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.JapaneseWordDto;
+import com.website.foreignLanguagesWebsite.entity.wordentity.JapaneseWord;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.JapaneseWordMapper;
 import com.website.foreignLanguagesWebsite.repository.JapaneseWordRepository;
@@ -32,6 +33,27 @@ public class JapaneseWordServiceImpl implements JapaneseWordService {
 
     @Override
     public List<JapaneseWordDto> getAllJapaneseWords() {
-        return japaneseWordRepository.findAll().stream().map((word) -> JapaneseWordMapper.mapToJapaneseWordDto(word)).collect(Collectors.toList());
+        return japaneseWordRepository.findAll().stream().map((word) ->
+                JapaneseWordMapper.mapToJapaneseWordDto(word)).collect(Collectors.toList());
+    }
+
+    @Override
+    public JapaneseWordDto updateJapaneseWord(Long wordId, JapaneseWordDto japaneseWordDto) {
+        JapaneseWord japaneseWord = japaneseWordRepository.findById(wordId).orElseThrow(() ->
+                new ResourceNotFoundException("Japanese word is not exists with given id: " + wordId));
+
+        japaneseWord.setHiragana(japaneseWordDto.getHiragana());
+        japaneseWord.setKatakana(japaneseWordDto.getKatakana());
+        japaneseWord.setKanji(japaneseWord.getKanji());
+        japaneseWord.setWords(japaneseWord.getWords());
+
+        return JapaneseWordMapper.mapToJapaneseWordDto(japaneseWordRepository.save(japaneseWord));
+    }
+
+    @Override
+    public void deleteJapaneseWord(Long wordId) {
+        japaneseWordRepository.findById(wordId).orElseThrow(() ->
+                new ResourceNotFoundException("Japanese word is not exists with given id: " + wordId));
+        japaneseWordRepository.deleteById(wordId);
     }
 }

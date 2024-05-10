@@ -1,6 +1,7 @@
-package com.website.foreignLanguagesWebsite.entity.lessonentity;
+package com.website.foreignLanguagesWebsite.entity.reference;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

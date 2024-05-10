@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.dto;
 
 import com.website.foreignLanguagesWebsite.entity.wordentity.JapaneseWord;
-import com.website.foreignLanguagesWebsite.entity.wordentity.PartOfSpeech;
+import com.website.foreignLanguagesWebsite.entity.reference.PartOfSpeech;
 import lombok.*;
 
 @Getter

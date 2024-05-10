@@ -1,5 +1,7 @@
 package com.website.foreignLanguagesWebsite.entity.lessonentity;
 
+import com.website.foreignLanguagesWebsite.entity.reference.DifficultlyLevel;
+import com.website.foreignLanguagesWebsite.entity.reference.LessonCategory;
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
-import java.time.Duration;
 import java.util.Date;
 
 @Data

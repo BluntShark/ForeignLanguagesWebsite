@@ -1,11 +1,10 @@
 package com.website.foreignLanguagesWebsite.dto;
 
-import com.website.foreignLanguagesWebsite.entity.lessonentity.DifficultlyLevel;
-import com.website.foreignLanguagesWebsite.entity.lessonentity.LessonCategory;
+import com.website.foreignLanguagesWebsite.entity.reference.DifficultlyLevel;
+import com.website.foreignLanguagesWebsite.entity.reference.LessonCategory;
 import lombok.*;
 
 import java.sql.Time;
-import java.time.Duration;
 import java.util.Date;
 @Getter
 @Setter

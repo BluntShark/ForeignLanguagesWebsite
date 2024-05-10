@@ -2,6 +2,7 @@ package com.website.foreignLanguagesWebsite.entity.userentity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
+import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import jakarta.persistence.*;
@@ -9,9 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Data

@@ -1,6 +1,6 @@
-package com.website.foreignLanguagesWebsite.entity.userentity;
+package com.website.foreignLanguagesWebsite.entity.reference;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,17 +12,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "languagelevel")
-public class LanguageLevel {
+@Table(name = "lessoncategory")
+public class LessonCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title", nullable=false)
+    @Column(name = "title")
     private String title;
-    @Column(name = "description", nullable=false)
+    @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "languageLevel")
-    @JsonIgnore
-    private List<User> users;
+    @OneToMany(mappedBy = "lessonCategory")
+    private List<Lesson> lessons;
 }

@@ -3,7 +3,6 @@ package com.website.foreignLanguagesWebsite.dto;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import lombok.*;
 
-import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor

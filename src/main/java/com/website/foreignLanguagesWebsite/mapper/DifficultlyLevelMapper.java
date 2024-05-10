@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.DifficultlyLevelDto;
-import com.website.foreignLanguagesWebsite.entity.lessonentity.DifficultlyLevel;
+import com.website.foreignLanguagesWebsite.entity.reference.DifficultlyLevel;
 
 public class DifficultlyLevelMapper {
     public static DifficultlyLevelDto mapToDifficultlyLevelDto(DifficultlyLevel difficultlyLevel){

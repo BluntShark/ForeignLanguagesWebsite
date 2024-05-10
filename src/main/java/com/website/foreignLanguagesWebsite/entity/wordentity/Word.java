@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.entity.wordentity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.website.foreignLanguagesWebsite.entity.reference.PartOfSpeech;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,11 +27,11 @@ public class Word {
     private String wordInRussian;
     @Column(name = "transcription", nullable = false)
     private String transcription;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JsonIgnore
     @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     @JoinColumn(name = "word_in_japanese_id", nullable = false)
     private JapaneseWord japaneseWord;
