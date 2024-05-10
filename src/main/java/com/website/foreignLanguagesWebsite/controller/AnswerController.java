@@ -26,4 +26,14 @@ public class AnswerController {
     public ResponseEntity<List<AnswerDto>> getAllAnswers(){
         return ResponseEntity.ok(answerService.getAllAnswers());
     }
+    @PutMapping("{id}")
+    public ResponseEntity<AnswerDto> updateAnswer(@PathVariable("id") Long id,
+                                                  @RequestBody AnswerDto answerDto){
+        return ResponseEntity.ok(answerService.updateAnswer(id, answerDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteAnswer(@PathVariable("id") Long id){
+        answerService.deleteAnswer(id);
+        return ResponseEntity.ok("Answer delete successfully");
+    }
 }
