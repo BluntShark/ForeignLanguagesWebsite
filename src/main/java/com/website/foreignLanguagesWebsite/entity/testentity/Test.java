@@ -24,7 +24,7 @@ public class Test {
     @OneToMany(mappedBy = "test", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private List<Answer> answers;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JsonIgnore
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;

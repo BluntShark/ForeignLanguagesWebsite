@@ -21,7 +21,7 @@ public class PartOfSpeech {
     private Long id;
     @Column(name = "part_of_speech")
     private String partOfSpeech;
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "partOfSpeech")
+    @OneToMany(mappedBy = "partOfSpeech", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private List<Word> words;
     public PartOfSpeech(Long id, String partOfSpeech) {
