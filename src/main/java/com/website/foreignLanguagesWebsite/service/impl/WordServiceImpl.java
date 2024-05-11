@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.WordDto;
+import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.WordMapper;
 import com.website.foreignLanguagesWebsite.repository.WordRepository;
@@ -33,5 +34,25 @@ public class WordServiceImpl implements WordService {
     @Override
     public List<WordDto> getAllWords() {
         return wordRepository.findAll().stream().map((word) -> WordMapper.mapToWordDto(word)).collect(Collectors.toList());
+    }
+
+    @Override
+    public WordDto updateWord(Long wordId, WordDto wordDto) {
+        Word word = wordRepository.findById(wordId).orElseThrow(() ->
+                new ResourceNotFoundException("Word is not exists with given id: " + wordId));
+
+        word.setWordInRussian(wordDto.getWordInRussian());
+        word.setTranscription(wordDto.getTranscription());
+        word.setPartOfSpeech(wordDto.getPartOfSpeech());
+        word.setJapaneseWord(wordDto.getJapaneseWord());
+
+        return WordMapper.mapToWordDto(wordRepository.save(word));
+    }
+
+    @Override
+    public void deleteWord(Long wordId) {
+        wordRepository.findById(wordId).orElseThrow(() ->
+                new ResourceNotFoundException("Word is not exists with given id: " + wordId));
+        wordRepository.deleteById(wordId);
     }
 }

@@ -26,5 +26,15 @@ public class WordController {
     public ResponseEntity<List<WordDto>> getAllWords(){
         return ResponseEntity.ok(wordService.getAllWords());
     }
+    @PutMapping("{id}")
+    public ResponseEntity<WordDto> updateWord(@PathVariable("id") Long id,
+                                                  @RequestBody WordDto wordDto){
+        return ResponseEntity.ok(wordService.updateWord(id, wordDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteWord(@PathVariable("id") Long id){
+        wordService.deleteWord(id);
+        return ResponseEntity.ok("Word delete successfully");
+    }
 }
 
