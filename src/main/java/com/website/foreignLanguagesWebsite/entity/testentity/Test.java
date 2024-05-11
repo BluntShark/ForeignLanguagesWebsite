@@ -19,7 +19,7 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "question")
+    @Column(name = "question", nullable = false)
     private String question;
     @OneToMany(mappedBy = "test", cascade = CascadeType.PERSIST)
     @JsonIgnore

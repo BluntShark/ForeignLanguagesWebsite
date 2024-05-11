@@ -31,7 +31,7 @@ public class Word {
     @JsonIgnore
     @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     @JoinColumn(name = "word_in_japanese_id", nullable = false)
     private JapaneseWord japaneseWord;

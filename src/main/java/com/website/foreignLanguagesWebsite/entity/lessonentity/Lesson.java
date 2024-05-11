@@ -21,7 +21,7 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "description")
     private String description;
@@ -35,13 +35,13 @@ public class Lesson {
     private Boolean isCompleted;
     @Column(name = "is_viewed")
     private Boolean isViewed;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "lesson_category_id")
     private LessonCategory lessonCategory;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne
     @JoinColumn(name="test_id")
     private Test test;
 

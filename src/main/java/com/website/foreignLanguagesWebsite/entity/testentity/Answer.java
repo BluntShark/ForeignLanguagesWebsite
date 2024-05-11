@@ -16,7 +16,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "answer")
+    @Column(name = "answer", nullable = false)
     private String answer;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JsonIgnore

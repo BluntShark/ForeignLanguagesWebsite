@@ -19,9 +19,9 @@ public class DifficultlyLevel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "level")
+    @Column(name = "level", nullable = false)
     private String level;
-    @OneToMany(mappedBy = "difficultlyLevel", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "difficultlyLevel", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Lesson> lessons;
 }
