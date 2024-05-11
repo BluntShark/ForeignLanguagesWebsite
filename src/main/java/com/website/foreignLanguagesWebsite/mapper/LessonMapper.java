@@ -1,9 +1,7 @@
 package com.website.foreignLanguagesWebsite.mapper;
 
 import com.website.foreignLanguagesWebsite.dto.LessonDto;
-import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
-import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 
 public class LessonMapper {
     public static LessonDto mapToLessonDto(Lesson lesson){

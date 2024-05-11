@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.service;
 
-import com.website.foreignLanguagesWebsite.dto.LanguageLevelDto;
 import com.website.foreignLanguagesWebsite.dto.LessonCategoryDto;
 
 import java.util.List;
