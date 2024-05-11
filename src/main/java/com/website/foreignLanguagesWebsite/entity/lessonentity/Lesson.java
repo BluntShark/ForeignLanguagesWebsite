@@ -35,13 +35,13 @@ public class Lesson {
     private Boolean isCompleted;
     @Column(name = "is_viewed")
     private Boolean isViewed;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "lesson_category_id")
     private LessonCategory lessonCategory;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="test_id")
     private Test test;
 

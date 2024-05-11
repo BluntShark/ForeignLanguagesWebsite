@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
+import com.website.foreignLanguagesWebsite.dto.AnswerDto;
 import com.website.foreignLanguagesWebsite.dto.LessonDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.LessonService;
@@ -26,5 +27,15 @@ public class LessonController {
     @GetMapping
     public ResponseEntity<List<LessonDto>> getAllLessons(){
         return ResponseEntity.ok(lessonService.getAllLessons());
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<LessonDto> updateLesson(@PathVariable("id") Long id,
+                                                  @RequestBody LessonDto lessonDto){
+        return ResponseEntity.ok(lessonService.updateLesson(id, lessonDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteLesson(@PathVariable("id") Long id){
+        lessonService.deleteLesson(id);
+        return ResponseEntity.ok("Lesson delete successfully");
     }
 }
