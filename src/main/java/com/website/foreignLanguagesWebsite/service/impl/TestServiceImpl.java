@@ -1,7 +1,10 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.TestDto;
+import com.website.foreignLanguagesWebsite.entity.testentity.Answer;
+import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
+import com.website.foreignLanguagesWebsite.mapper.AnswerMapper;
 import com.website.foreignLanguagesWebsite.mapper.TestMapper;
 import com.website.foreignLanguagesWebsite.repository.TestRepository;
 import com.website.foreignLanguagesWebsite.service.TestService;
@@ -32,5 +35,25 @@ public class TestServiceImpl implements TestService {
     @Override
     public List<TestDto> getAllTests() {
         return testRepository.findAll().stream().map((test) -> TestMapper.mapToTestDto(test)).collect(Collectors.toList());
+    }
+
+    @Override
+    public TestDto updateTest(Long testId, TestDto testDto) {
+        Test test = testRepository.findById(testId).orElseThrow(() ->
+                new ResourceNotFoundException("Test is not exists with given id: " + testId));
+
+        test.setQuestion(testDto.getQuestion());
+        test.setAnswers(testDto.getAnswers());
+        test.setCorrectAnswer(testDto.getCorrectAnswer());
+        test.setLesson(testDto.getLesson());
+
+        return TestMapper.mapToTestDto(testRepository.save(test));
+    }
+
+    @Override
+    public void deleteTest(Long testId) {
+        testRepository.findById(testId).orElseThrow(() ->
+                new ResourceNotFoundException("Test is not exists with given id: " + testId));
+        testRepository.deleteById(testId);
     }
 }

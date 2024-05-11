@@ -8,4 +8,7 @@ public interface TestService {
     TestDto createTest(TestDto testDto);
     TestDto getTestById(Long testId);
     List<TestDto> getAllTests();
+
+    TestDto updateTest(Long testId, TestDto testDto);
+    void deleteTest(Long testId);
 }

@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
+import com.website.foreignLanguagesWebsite.dto.AnswerDto;
 import com.website.foreignLanguagesWebsite.dto.TestDto;
 import com.website.foreignLanguagesWebsite.service.TestService;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,15 @@ public class TestController {
     @GetMapping
     public ResponseEntity<List<TestDto>> getAllTests() {
         return ResponseEntity.ok(testService.getAllTests());
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<TestDto> updateTest(@PathVariable("id") Long id,
+                                                  @RequestBody TestDto testDto){
+        return ResponseEntity.ok(testService.updateTest(id, testDto));
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteTest(@PathVariable("id") Long id){
+        testService.deleteTest(id);
+        return ResponseEntity.ok("Test delete successfully");
     }
 }

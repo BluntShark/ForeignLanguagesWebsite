@@ -21,14 +21,14 @@ public class Test {
     private Long id;
     @Column(name = "question")
     private String question;
-    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "test", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private List<Answer> answers;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "test")
+    @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "test")
     private Lesson lesson;
     @Column(name = "is_completed")
     private Boolean isCompleted;
