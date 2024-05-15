@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @AllArgsConstructor
@@ -26,6 +27,10 @@ public class WordController {
     public ResponseEntity<List<WordDto>> getAllWords(){
         return ResponseEntity.ok(wordService.getAllWords());
     }
+//    @PostMapping("/byUserId/{id}")
+//    public ResponseEntity<List<WordDto>> getWordsByUserId(@PathVariable("id") Long id){
+//        return ResponseEntity.ok(Collections.singletonList(wordService.getWordById(id)));
+//    }
     @PutMapping("{id}")
     public ResponseEntity<WordDto> updateWord(@PathVariable("id") Long id,
                                                   @RequestBody WordDto wordDto){

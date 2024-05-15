@@ -20,5 +20,5 @@ public class UserDto {
     private String email;
     private String password;
     private LanguageLevel languageLevel;
-    private Set<Word> words = new HashSet<>();
+    //private Set<Word> words = new HashSet<>();
 }

@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class WordServiceImpl implements WordService {
+public class WordServiceImpl implements WordService{
     private WordRepository wordRepository;
     @Override
     public WordDto createWord(WordDto wordDto) {
@@ -55,4 +55,9 @@ public class WordServiceImpl implements WordService {
                 new ResourceNotFoundException("Word is not exists with given id: " + wordId));
         wordRepository.deleteById(wordId);
     }
+
+//    public List<WordDto> getWordsByUserId(Long userId){
+//        return wordRepository.findWordsByUserId(userId).stream().map((word) -> WordMapper.mapToWordDto(word)).collect(Collectors.toList());
+//    }
+
 }

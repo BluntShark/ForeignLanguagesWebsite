@@ -37,7 +37,15 @@ public class User {
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"))
     private Set<Word> words = new HashSet<>();
-//    @ManyToMany
+
+    public User(Long id, String username, String email, String password, LanguageLevel languageLevel) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.languageLevel = languageLevel;
+    }
+    //    @ManyToMany
 //    @JoinTable(name = "userviewedlessons",
 //            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
 //            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))

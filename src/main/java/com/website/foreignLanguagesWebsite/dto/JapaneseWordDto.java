@@ -14,5 +14,6 @@ public class JapaneseWordDto {
     private String katakana;
     private String kanji;
     private String example;
+    private String translation;
     private Word words;
 }

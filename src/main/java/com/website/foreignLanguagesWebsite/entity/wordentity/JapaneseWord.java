@@ -27,6 +27,8 @@ public class JapaneseWord {
     private String kanji;
     @Column(name = "example", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String example;
+    @Column(name = "translation")
+    private String translation;
     @OneToOne(mappedBy = "japaneseWord")
     @JsonIgnore
     private Word words;

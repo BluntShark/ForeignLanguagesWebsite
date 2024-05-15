@@ -11,8 +11,7 @@ public class UserMapper {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getLanguageLevel(),
-                user.getWords()
+                user.getLanguageLevel()
         );
     }
     public static User mapToUser(UserDto userDto){
@@ -21,8 +20,7 @@ public class UserMapper {
                 userDto.getUsername(),
                 userDto.getEmail(),
                 userDto.getPassword(),
-                userDto.getLanguageLevel(),
-                userDto.getWords()
+                userDto.getLanguageLevel()
         );
     }
 }
