@@ -13,5 +13,6 @@ public class JapaneseWordDto {
     private String hiragana;
     private String katakana;
     private String kanji;
+    private String example;
     private Word words;
 }

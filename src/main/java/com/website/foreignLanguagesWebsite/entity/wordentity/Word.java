@@ -27,7 +27,7 @@ public class Word {
     private String wordInRussian;
     @Column(name = "transcription", nullable = false)
     private String transcription;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;

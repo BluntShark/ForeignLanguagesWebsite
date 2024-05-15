@@ -18,7 +18,7 @@ public class Answer {
     private Long id;
     @Column(name = "answer", nullable = false)
     private String answer;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "test_id")
     private Test test;

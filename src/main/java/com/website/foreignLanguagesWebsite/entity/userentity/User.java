@@ -1,9 +1,7 @@
 package com.website.foreignLanguagesWebsite.entity.userentity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.website.foreignLanguagesWebsite.entity.lessonentity.Lesson;
 import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
-import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,7 +27,7 @@ public class User {
     private String email;
     @Column(name = "password")
     private String password;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel;
@@ -39,30 +37,21 @@ public class User {
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"))
     private Set<Word> words = new HashSet<>();
-    @ManyToMany
-    @JoinTable(name = "userviewedlessons",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
-    private Set<Lesson> viewedLessons = new HashSet<>();
-
-    @ManyToMany
-    @JoinTable(name = "usercompletedlessons",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
-    private Set<Lesson> completedLessons = new HashSet<>();
-
-    @ManyToMany
-    @JoinTable(name = "usercompletedtests",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "test_id", referencedColumnName = "id"))
-    private Set<Test> completedTests = new HashSet<>();
-
-    public User(Long id, String username, String email, String password, LanguageLevel languageLevel, Set<Word> words) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.languageLevel = languageLevel;
-        this.words = words;
-    }
+//    @ManyToMany
+//    @JoinTable(name = "userviewedlessons",
+//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
+//    private Set<Lesson> viewedLessons = new HashSet<>();
+//
+//    @ManyToMany
+//    @JoinTable(name = "usercompletedlessons",
+//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
+//    private Set<Lesson> completedLessons = new HashSet<>();
+//
+//    @ManyToMany
+//    @JoinTable(name = "usercompletedtests",
+//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "test_id", referencedColumnName = "id"))
+//    private Set<Test> completedTests = new HashSet<>();
 }

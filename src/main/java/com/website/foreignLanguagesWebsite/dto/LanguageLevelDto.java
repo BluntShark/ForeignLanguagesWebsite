@@ -15,6 +15,5 @@ import java.util.List;
 public class LanguageLevelDto {
     private Long id;
     private String title;
-    private String description;
     private List<User> users;
 }
