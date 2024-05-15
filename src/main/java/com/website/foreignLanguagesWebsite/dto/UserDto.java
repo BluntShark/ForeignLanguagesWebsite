@@ -1,14 +1,11 @@
 package com.website.foreignLanguagesWebsite.dto;
 
 import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
-import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter

@@ -42,7 +42,6 @@ public class LessonServiceImpl implements LessonService {
                 new ResourceNotFoundException("Lesson is not exists with given id: " + lessonId));
 
         lesson.setTitle(lessonDto.getTitle());
-        lesson.setDescription(lesson.getDescription());
         lesson.setContent(lesson.getContent());
         lesson.setDateOfCreation(lessonDto.getDateOfCreation());
         lesson.setDuration(lessonDto.getDuration());

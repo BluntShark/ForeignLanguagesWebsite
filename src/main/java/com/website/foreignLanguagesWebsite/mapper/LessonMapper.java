@@ -8,7 +8,6 @@ public class LessonMapper {
         return new LessonDto(
                 lesson.getId(),
                 lesson.getTitle(),
-                lesson.getDescription(),
                 lesson.getContent(),
                 lesson.getDateOfCreation(),
                 lesson.getDuration(),
@@ -20,7 +19,6 @@ public class LessonMapper {
         return new Lesson(
                 lessonDto.getId(),
                 lessonDto.getTitle(),
-                lessonDto.getDescription(),
                 lessonDto.getContent(),
                 lessonDto.getDateOfCreation(),
                 lessonDto.getDuration(),

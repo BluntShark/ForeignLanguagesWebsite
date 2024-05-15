@@ -23,8 +23,6 @@ public class Lesson {
     private Long id;
     @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "description")
-    private String description;
     @Column(name = "content")
     private String content;
     @Column(name = "date_of_creation")
@@ -45,11 +43,10 @@ public class Lesson {
     @JoinColumn(name="test_id")
     private Test test;
 
-    public Lesson(Long id, String title, String description, String content, Date dateOfCreation,
+    public Lesson(Long id, String title, String content, Date dateOfCreation,
                   Time duration, DifficultlyLevel difficultlyLevel, LessonCategory lessonCategory) {
         this.id = id;
         this.title = title;
-        this.description = description;
         this.content = content;
         this.dateOfCreation = dateOfCreation;
         this.duration = duration;

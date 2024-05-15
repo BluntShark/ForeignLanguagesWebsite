@@ -30,7 +30,7 @@ public class User {
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
-    private LanguageLevel languageLevel;
+    private LanguageLevel languageLevel; //удалить объект из таблицы languageLevel
     @ManyToMany
     @JsonIgnore
     @JoinTable(name = "userword",
