@@ -33,7 +33,7 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public List<LessonDto> getAllLessons() {
-        return lessonRepository.findAll().stream().map((lesson) -> LessonMapper.mapToLessonDto(lesson)).collect(Collectors.toList());
+        return lessonRepository.findAll().stream().map(LessonMapper::mapToLessonDto).collect(Collectors.toList());
     }
 
     @Override
