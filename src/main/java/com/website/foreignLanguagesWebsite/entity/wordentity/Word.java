@@ -35,7 +35,7 @@ public class Word {
     @JsonIgnore
     @JoinColumn(name = "word_in_japanese_id", nullable = false)
     private JapaneseWord japaneseWord;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     @JoinTable(name = "userword",
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),

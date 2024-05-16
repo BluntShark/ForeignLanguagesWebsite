@@ -31,7 +31,7 @@ public class User {
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel; //удалить объект из таблицы languageLevel
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     @JoinTable(name = "userword",
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
