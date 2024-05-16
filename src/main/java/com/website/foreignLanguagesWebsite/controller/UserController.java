@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.controller;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,9 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long user) {
+//        UserDto user1 = userService.getUserById(user);
+//
+//        System.out.println(user1.getWords());
         return ResponseEntity.ok(userService.getUserById(user));
     }
     @GetMapping

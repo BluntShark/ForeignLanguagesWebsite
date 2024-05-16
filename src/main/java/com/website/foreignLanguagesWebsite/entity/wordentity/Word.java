@@ -32,7 +32,7 @@ public class Word {
     @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
+    //@JsonIgnore
     @JoinColumn(name = "word_in_japanese_id", nullable = false)
     private JapaneseWord japaneseWord;
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})

@@ -8,7 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -30,21 +32,13 @@ public class User {
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
-    private LanguageLevel languageLevel; //удалить объект из таблицы languageLevel
+    private LanguageLevel languageLevel;
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JsonIgnore
     @JoinTable(name = "userword",
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"))
-    private Set<Word> words = new HashSet<>();
+    private List<Word> words = new ArrayList<>();
 
-    public User(Long id, String username, String email, String password, LanguageLevel languageLevel) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.languageLevel = languageLevel;
-    }
     //    @ManyToMany
 //    @JoinTable(name = "userviewedlessons",
 //            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),

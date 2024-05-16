@@ -5,22 +5,25 @@ import com.website.foreignLanguagesWebsite.entity.userentity.User;
 
 
 public class UserMapper {
-    public static UserDto mapToUserDto(User user){
+    public static UserDto mapToUserDto(User user) {
         return new UserDto(
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getLanguageLevel()
+                user.getLanguageLevel(),
+                user.getWords()
         );
     }
-    public static User mapToUser(UserDto userDto){
+
+    public static User mapToUser(UserDto userDto) {
         return new User(
                 userDto.getId(),
                 userDto.getUsername(),
                 userDto.getEmail(),
                 userDto.getPassword(),
-                userDto.getLanguageLevel()
+                userDto.getLanguageLevel(),
+                userDto.getWords()
         );
     }
 }

@@ -30,14 +30,6 @@ public class Test {
     private Answer correctAnswer;
     @OneToOne(mappedBy = "test")
     private Lesson lesson;
-    @Column(name = "is_completed")
-    private Boolean isCompleted;
-
-    public Test(Long id, String question, List<Answer> answers, Answer correctAnswer, Lesson lesson) {
-        this.id = id;
-        this.question = question;
-        this.answers = answers;
-        this.correctAnswer = correctAnswer;
-        this.lesson = lesson;
-    }
+//    @Column(name = "is_completed")
+//    private Boolean isCompleted;
 }

@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.UserMapper;
@@ -55,6 +56,16 @@ public class UserServiceImpl implements UserService {
         userRepository.findById(userId).orElseThrow(() ->
                 new ResourceNotFoundException("User is not exists with given id: " + userId));
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public UserDto addWord(WordDto wordDto) {
+        return null;
+    }
+
+    @Override
+    public List<UserDto> getAllWords() {
+        return null;
     }
 
 //    @Override
