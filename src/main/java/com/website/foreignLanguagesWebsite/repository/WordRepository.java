@@ -1,9 +1,14 @@
 package com.website.foreignLanguagesWebsite.repository;
 
+import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
 public interface WordRepository extends JpaRepository<Word, Long> {
-    //List<Word> findWordsByUserId(Long userId);
+    //List<WordDto> findWordsByUserId(Long userId);
+    List<WordDto> findByUsers(UserDto userDto);
 }

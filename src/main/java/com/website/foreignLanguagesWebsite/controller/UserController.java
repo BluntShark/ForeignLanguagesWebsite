@@ -23,9 +23,6 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long user) {
-//        UserDto user1 = userService.getUserById(user);
-//
-//        System.out.println(user1.getWords());
         return ResponseEntity.ok(userService.getUserById(user));
     }
     @GetMapping
@@ -42,13 +39,4 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User delete successfully");
     }
-
-    //    @GetMapping("/byWordId/{id}")
-//    public  ResponseEntity<List<User>> getUserByWordId(@PathVariable("id") Long wordId){
-//        return ResponseEntity.ok(userRepository.findUsersByWordId(wordId));
-//    }
-//    @GetMapping("/getByWord")
-//    public List<User> getByUser(@RequestBody Word word){
-//        return userServiceImpl.getByWord(word);
-//    }
 }
