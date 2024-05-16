@@ -29,7 +29,7 @@ public class JapaneseWord {
     private String example;
     @Column(name = "translation")
     private String translation;
-    @OneToOne(mappedBy = "japaneseWord")
+    @OneToOne(mappedBy = "japaneseWord", cascade = CascadeType.ALL)
     @JsonIgnore
     private Word words;
 }
