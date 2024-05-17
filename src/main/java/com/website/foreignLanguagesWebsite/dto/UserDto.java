@@ -7,8 +7,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 @Getter
 @Setter
@@ -20,5 +23,6 @@ public class UserDto {
     private String email;
     private String password;
     private LanguageLevel languageLevel;
-    private Set<Word> words = new HashSet<>();
+    private List<Word> words = new ArrayList<>() {
+    };
 }

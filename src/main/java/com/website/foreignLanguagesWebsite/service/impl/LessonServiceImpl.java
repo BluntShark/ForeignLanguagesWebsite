@@ -33,7 +33,7 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public List<LessonDto> getAllLessons() {
-        return lessonRepository.findAll().stream().map((lesson) -> LessonMapper.mapToLessonDto(lesson)).collect(Collectors.toList());
+        return lessonRepository.findAll().stream().map(LessonMapper::mapToLessonDto).collect(Collectors.toList());
     }
 
     @Override
@@ -42,7 +42,6 @@ public class LessonServiceImpl implements LessonService {
                 new ResourceNotFoundException("Lesson is not exists with given id: " + lessonId));
 
         lesson.setTitle(lessonDto.getTitle());
-        lesson.setDescription(lesson.getDescription());
         lesson.setContent(lesson.getContent());
         lesson.setDateOfCreation(lessonDto.getDateOfCreation());
         lesson.setDuration(lessonDto.getDuration());

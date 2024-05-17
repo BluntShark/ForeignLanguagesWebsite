@@ -8,7 +8,6 @@ public class LanguageLevelMapper {
         return new LanguageLevelDto(
                 languageLevel.getId(),
                 languageLevel.getTitle(),
-                languageLevel.getDescription(),
                 languageLevel.getUsers()
         );
     }
@@ -16,7 +15,6 @@ public class LanguageLevelMapper {
         return new LanguageLevel(
                 languageLevelDto.getId(),
                 languageLevelDto.getTitle(),
-                languageLevelDto.getDescription(),
                 languageLevelDto.getUsers()
         );
     }

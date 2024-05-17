@@ -1,10 +1,13 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.UserMapper;
+import com.website.foreignLanguagesWebsite.mapper.WordMapper;
 import com.website.foreignLanguagesWebsite.repository.UserRepository;
+import com.website.foreignLanguagesWebsite.repository.WordRepository;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +19,6 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
-
     @Override
     public UserDto createUser(UserDto userDto) {
         return UserMapper
@@ -56,6 +58,10 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User is not exists with given id: " + userId));
         userRepository.deleteById(userId);
     }
+//    @Override
+//    public List<WordDto> getAllWords() {
+//        return wordRepository.findAll().stream().map((word) -> WordMapper.mapToWordDto(word)).collect(Collectors.toUnmodifiableList());
+//    }
 
 //    @Override
 //    public List<UserDto> getAllUsersByWord(Long wordId) {

@@ -19,25 +19,17 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "question")
+    @Column(name = "question", nullable = false)
     private String question;
-    @OneToMany(mappedBy = "test", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "test")
     @JsonIgnore
     private List<Answer> answers;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JsonIgnore
     @JoinColumn(name = "correct_answer_id")
     private Answer correctAnswer;
-    @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "test")
+    @OneToOne(mappedBy = "test")
     private Lesson lesson;
-    @Column(name = "is_completed")
-    private Boolean isCompleted;
-
-    public Test(Long id, String question, List<Answer> answers, Answer correctAnswer, Lesson lesson) {
-        this.id = id;
-        this.question = question;
-        this.answers = answers;
-        this.correctAnswer = correctAnswer;
-        this.lesson = lesson;
-    }
+//    @Column(name = "is_completed")
+//    private Boolean isCompleted;
 }

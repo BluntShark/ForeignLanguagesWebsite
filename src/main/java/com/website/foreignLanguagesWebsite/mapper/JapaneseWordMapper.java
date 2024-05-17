@@ -10,6 +10,8 @@ public class JapaneseWordMapper {
                 japaneseWord.getHiragana(),
                 japaneseWord.getKatakana(),
                 japaneseWord.getKanji(),
+                japaneseWord.getExample(),
+                japaneseWord.getTranslation(),
                 japaneseWord.getWords()
         );
     }
@@ -19,6 +21,8 @@ public class JapaneseWordMapper {
                 japaneseWordDto.getHiragana(),
                 japaneseWordDto.getKatakana(),
                 japaneseWordDto.getKanji(),
+                japaneseWordDto.getExample(),
+                japaneseWordDto.getTranslation(),
                 japaneseWordDto.getWords()
         );
     }

@@ -1,7 +1,7 @@
 package com.website.foreignLanguagesWebsite.controller;
 
-import com.website.foreignLanguagesWebsite.dto.AnswerDto;
 import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,6 @@ public class UserController {
     public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long user) {
         return ResponseEntity.ok(userService.getUserById(user));
     }
-
     @GetMapping
     public ResponseEntity<List<UserDto>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
@@ -40,13 +39,4 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User delete successfully");
     }
-
-    //    @GetMapping("/byWordId/{id}")
-//    public  ResponseEntity<List<User>> getUserByWordId(@PathVariable("id") Long wordId){
-//        return ResponseEntity.ok(userRepository.findUsersByWordId(wordId));
-//    }
-//    @GetMapping("/getByWord")
-//    public List<User> getByUser(@RequestBody Word word){
-//        return userServiceImpl.getByWord(word);
-//    }
 }

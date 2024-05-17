@@ -1,6 +1,7 @@
 package com.website.foreignLanguagesWebsite.service;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
+import com.website.foreignLanguagesWebsite.dto.WordDto;
 
 import java.util.List;
 

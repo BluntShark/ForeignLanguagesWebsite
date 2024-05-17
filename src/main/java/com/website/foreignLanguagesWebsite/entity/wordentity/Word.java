@@ -27,15 +27,15 @@ public class Word {
     private String wordInRussian;
     @Column(name = "transcription", nullable = false)
     private String transcription;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "part_of_speech_id", nullable = false)
     private PartOfSpeech partOfSpeech;
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
+    //@JsonIgnore
     @JoinColumn(name = "word_in_japanese_id", nullable = false)
     private JapaneseWord japaneseWord;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     @JoinTable(name = "userword",
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),

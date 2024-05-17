@@ -18,10 +18,10 @@ public class LessonCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "lessonCategory", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "lessonCategory", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lesson> lessons;
 }

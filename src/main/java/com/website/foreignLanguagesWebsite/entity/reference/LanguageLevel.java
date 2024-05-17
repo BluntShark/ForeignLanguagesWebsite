@@ -21,9 +21,7 @@ public class LanguageLevel {
     private Long id;
     @Column(name = "title", nullable=false)
     private String title;
-    @Column(name = "description", nullable=false)
-    private String description;
-    @OneToMany(mappedBy = "languageLevel", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "languageLevel")
     @JsonIgnore
     private List<User> users;
 }

@@ -1,10 +1,8 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.TestDto;
-import com.website.foreignLanguagesWebsite.entity.testentity.Answer;
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
-import com.website.foreignLanguagesWebsite.mapper.AnswerMapper;
 import com.website.foreignLanguagesWebsite.mapper.TestMapper;
 import com.website.foreignLanguagesWebsite.repository.TestRepository;
 import com.website.foreignLanguagesWebsite.service.TestService;

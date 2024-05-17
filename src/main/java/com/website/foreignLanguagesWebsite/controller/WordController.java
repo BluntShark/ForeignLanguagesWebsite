@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.controller;
 
+import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.service.WordService;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @AllArgsConstructor
@@ -25,6 +27,10 @@ public class WordController {
     @GetMapping
     public ResponseEntity<List<WordDto>> getAllWords(){
         return ResponseEntity.ok(wordService.getAllWords());
+    }
+    @GetMapping("/getByUser")
+    public ResponseEntity<List<WordDto>> getByUser(@RequestBody UserDto userDto){
+        return ResponseEntity.ok(wordService.getWordsByUser(userDto));
     }
     @PutMapping("{id}")
     public ResponseEntity<WordDto> updateWord(@PathVariable("id") Long id,

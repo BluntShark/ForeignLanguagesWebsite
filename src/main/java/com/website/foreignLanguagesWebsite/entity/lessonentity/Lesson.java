@@ -21,35 +21,32 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "description")
-    private String description;
     @Column(name = "content")
     private String content;
     @Column(name = "date_of_creation")
     private Date dateOfCreation;
     @Column(name = "duration")
     private Time duration;
-    @Column(name = "is_completed")
-    private Boolean isCompleted;
-    @Column(name = "is_viewed")
-    private Boolean isViewed;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+//    @Column(name = "is_completed")
+//    private Boolean isCompleted;
+//    @Column(name = "is_viewed")
+//    private Boolean isViewed;
+    @ManyToOne
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "lesson_category_id")
     private LessonCategory lessonCategory;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne
     @JoinColumn(name="test_id")
     private Test test;
 
-    public Lesson(Long id, String title, String description, String content, Date dateOfCreation,
+    public Lesson(Long id, String title, String content, Date dateOfCreation,
                   Time duration, DifficultlyLevel difficultlyLevel, LessonCategory lessonCategory) {
         this.id = id;
         this.title = title;
-        this.description = description;
         this.content = content;
         this.dateOfCreation = dateOfCreation;
         this.duration = duration;

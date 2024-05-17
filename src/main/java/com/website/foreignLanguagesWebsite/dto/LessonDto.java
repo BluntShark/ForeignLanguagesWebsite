@@ -14,7 +14,6 @@ import java.util.Date;
 public class LessonDto {
     private Long id;
     private String title;
-    private String description;
     private String content;
     private Date dateOfCreation;
     private Time duration;

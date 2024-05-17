@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.controller;
 
-import com.website.foreignLanguagesWebsite.dto.LanguageLevelDto;
 import com.website.foreignLanguagesWebsite.dto.LessonCategoryDto;
 import com.website.foreignLanguagesWebsite.service.LessonCategoryService;
 import lombok.AllArgsConstructor;

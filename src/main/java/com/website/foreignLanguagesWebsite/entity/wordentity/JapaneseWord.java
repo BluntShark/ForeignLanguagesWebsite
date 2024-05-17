@@ -25,7 +25,11 @@ public class JapaneseWord {
     private String katakana;
     @Column(name = "kanji", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String kanji;
-    @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "japaneseWord")
+    @Column(name = "example", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
+    private String example;
+    @Column(name = "translation")
+    private String translation;
+    @OneToOne(mappedBy = "japaneseWord", cascade = CascadeType.ALL)
     @JsonIgnore
     private Word words;
 }
