@@ -61,8 +61,4 @@ public class WordServiceImpl implements WordService{
         return wordRepository.findByUsers(userDto);
     }
 
-//    public List<WordDto> getWordsByUserId(Long userId){
-//        return wordRepository.findWordsByUserId(userId).stream().map((word) -> WordMapper.mapToWordDto(word)).collect(Collectors.toList());
-//    }
-
 }
