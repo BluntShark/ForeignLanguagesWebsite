@@ -11,7 +11,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface WordRepository extends JpaRepository<Word, Long> {
-//    @Transactional
-//    @Query("SELECT t FROM userword where t.user_id = ?1")
-    List<WordDto> findByUsers(UserDto userDto);
+    //List<WordDto> findByUsers(UserDto userDto);
 }

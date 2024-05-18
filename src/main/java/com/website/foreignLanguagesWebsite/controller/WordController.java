@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
-
+@CrossOrigin("*")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/words")
@@ -28,10 +28,10 @@ public class WordController {
     public ResponseEntity<List<WordDto>> getAllWords(){
         return ResponseEntity.ok(wordService.getAllWords());
     }
-    @GetMapping("/getByUser")
-    public ResponseEntity<List<WordDto>> getByUser(@RequestBody UserDto userDto){
-        return ResponseEntity.ok(wordService.getWordsByUser(userDto));
-    }
+//    @GetMapping("/getByUser")
+//    public ResponseEntity<List<WordDto>> getByUser(@RequestBody UserDto userDto){
+//        return ResponseEntity.ok(wordService.getWordsByUser(userDto));
+//    }
     @PutMapping("{id}")
     public ResponseEntity<WordDto> updateWord(@PathVariable("id") Long id,
                                                   @RequestBody WordDto wordDto){

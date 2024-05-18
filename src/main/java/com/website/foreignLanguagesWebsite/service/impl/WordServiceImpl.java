@@ -44,8 +44,11 @@ public class WordServiceImpl implements WordService{
 
         word.setWordInRussian(wordDto.getWordInRussian());
         word.setTranscription(wordDto.getTranscription());
-        word.setPartOfSpeech(wordDto.getPartOfSpeech());
-        word.setJapaneseWord(wordDto.getJapaneseWord());
+        word.setHiragana(wordDto.getHiragana());
+        word.setKatakana(wordDto.getKatakana());
+        word.setKanji(wordDto.getKanji());
+        word.setExample(wordDto.getExample());
+        word.setTranslation(wordDto.getTranslation());
 
         return WordMapper.mapToWordDto(wordRepository.save(word));
     }
@@ -56,9 +59,9 @@ public class WordServiceImpl implements WordService{
                 new ResourceNotFoundException("Word is not exists with given id: " + wordId));
         wordRepository.deleteById(wordId);
     }
-    @Override
-    public List<WordDto> getWordsByUser(UserDto userDto) {
-        return wordRepository.findByUsers(userDto);
-    }
+//    @Override
+//    public List<WordDto> getWordsByUser(UserDto userDto) {
+//        return wordRepository.findByUsers(userDto);
+//    }
 
 }
