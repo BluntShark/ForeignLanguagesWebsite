@@ -20,7 +20,6 @@ import java.util.Set;
 public class UserDto {
     private Long id;
     private String username;
-    private String email;
     private String password;
     private LanguageLevel languageLevel;
     private List<Word> words = new ArrayList<>() {

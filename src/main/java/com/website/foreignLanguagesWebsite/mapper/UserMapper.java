@@ -9,7 +9,6 @@ public class UserMapper {
         return new UserDto(
                 user.getId(),
                 user.getUsername(),
-                user.getEmail(),
                 user.getPassword(),
                 user.getLanguageLevel(),
                 user.getWords()
@@ -20,7 +19,6 @@ public class UserMapper {
         return new User(
                 userDto.getId(),
                 userDto.getUsername(),
-                userDto.getEmail(),
                 userDto.getPassword(),
                 userDto.getLanguageLevel(),
                 userDto.getWords()

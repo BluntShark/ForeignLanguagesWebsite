@@ -25,8 +25,8 @@ public class User {
     private Long id;
     @Column(name = "user_name")
     private String username;
-    @Column(name = "email")
-    private String email;
+//    @Column(name = "email")
+//    private String email;
     @Column(name = "password")
     private String password;
     @ManyToOne
@@ -38,7 +38,19 @@ public class User {
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"))
     private List<Word> words = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    private List<Role> roles = new ArrayList<>();
 
+    public User(Long id, String username, String password, LanguageLevel languageLevel, List<Word> words) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.languageLevel = languageLevel;
+        this.words = words;
+    }
     //    @ManyToMany
 //    @JoinTable(name = "userviewedlessons",
 //            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
