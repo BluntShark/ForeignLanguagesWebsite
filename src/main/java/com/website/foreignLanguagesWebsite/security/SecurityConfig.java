@@ -33,6 +33,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/**").permitAll()
                         .anyRequest().authenticated()
+//                                .requestMatchers(HttpMethod.GET, "/auth/**").permitAll()
+//                                .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
+//                                .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
