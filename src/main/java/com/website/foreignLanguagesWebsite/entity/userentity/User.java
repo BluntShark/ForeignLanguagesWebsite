@@ -44,13 +44,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private List<Role> roles = new ArrayList<>();
 
-//    public User(Long id, String username, String password, LanguageLevel languageLevel, List<Word> words) {
-//        this.id = id;
-//        this.username = username;
-//        this.password = password;
-//        this.languageLevel = languageLevel;
-//        this.words = words;
-//    }
+    public User(Long id, String username, String password, LanguageLevel languageLevel, List<Word> words) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.languageLevel = languageLevel;
+        this.words = words;
+    }
     //    @ManyToMany
 //    @JoinTable(name = "userviewedlessons",
 //            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
