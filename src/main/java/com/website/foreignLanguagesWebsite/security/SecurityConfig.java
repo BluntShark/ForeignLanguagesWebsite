@@ -33,7 +33,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers(HttpMethod.POST, "/register").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/**","/login**","/logout**").permitAll()
+                        .anyRequest().permitAll()
+
+                        //.anyRequest().authenticated()
 //                                .requestMatchers(HttpMethod.GET, "/auth/**").permitAll()
 //                                .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
 //                                .anyRequest().authenticated()
