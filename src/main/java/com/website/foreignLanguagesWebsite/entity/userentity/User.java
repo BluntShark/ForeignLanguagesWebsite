@@ -25,8 +25,6 @@ public class User {
     private Long id;
     @Column(name = "user_name")
     private String username;
-//    @Column(name = "email")
-//    private String email;
     @Column(name = "password")
     private String password;
     @ManyToOne

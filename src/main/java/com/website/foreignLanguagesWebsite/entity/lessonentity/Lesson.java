@@ -29,10 +29,6 @@ public class Lesson {
     private Date dateOfCreation;
     @Column(name = "duration")
     private Time duration;
-//    @Column(name = "is_completed")
-//    private Boolean isCompleted;
-//    @Column(name = "is_viewed")
-//    private Boolean isViewed;
     @ManyToOne
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;
@@ -43,12 +39,12 @@ public class Lesson {
     @JoinColumn(name="test_id")
     private Test test;
 
-    public Lesson(Long id, String title, String content, Date dateOfCreation,
+    public Lesson(Long id, String title, String content,
                   Time duration, DifficultlyLevel difficultlyLevel, LessonCategory lessonCategory) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.dateOfCreation = dateOfCreation;
+        this.dateOfCreation = new Date();
         this.duration = duration;
         this.difficultlyLevel = difficultlyLevel;
         this.lessonCategory = lessonCategory;

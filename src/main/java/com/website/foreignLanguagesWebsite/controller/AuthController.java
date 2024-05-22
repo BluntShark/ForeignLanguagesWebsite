@@ -6,7 +6,6 @@ import com.website.foreignLanguagesWebsite.entity.userentity.Role;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.repository.RoleRepository;
 import com.website.foreignLanguagesWebsite.repository.UserRepository;
-import com.website.foreignLanguagesWebsite.security.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
