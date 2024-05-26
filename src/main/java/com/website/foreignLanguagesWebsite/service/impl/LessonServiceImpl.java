@@ -42,12 +42,11 @@ public class LessonServiceImpl implements LessonService {
                 new ResourceNotFoundException("Lesson is not exists with given id: " + lessonId));
 
         lesson.setTitle(lessonDto.getTitle());
-        lesson.setContent(lesson.getContent());
+        lesson.setContent(lessonDto.getContent());
         lesson.setDuration(lessonDto.getDuration());
         lesson.setDateOfCreation(lessonDto.getDateOfCreation());
         lesson.setDifficultlyLevel(lessonDto.getDifficultlyLevel());
         lesson.setLessonCategory(lessonDto.getLessonCategory());
-        lesson.setTitle(lessonDto.getTitle());
 
         return LessonMapper.mapToLessonDto(lessonRepository.save(lesson));
     }
