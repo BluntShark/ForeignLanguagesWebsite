@@ -7,19 +7,25 @@ public class WordMapper {
     public static WordDto mapToWordDto(Word word){
         return new WordDto(
                 word.getId(),
-                word.getJapaneseWord(),
                 word.getWordInRussian(),
                 word.getTranscription(),
-                word.getPartOfSpeech()
+                word.getHiragana(),
+                word.getKatakana(),
+                word.getKanji(),
+                word.getExample(),
+                word.getTranslation()
         );
     }
     public static Word mapToWord(WordDto wordDto){
         return new Word(
                 wordDto.getId(),
-                wordDto.getJapaneseWord(),
                 wordDto.getWordInRussian(),
                 wordDto.getTranscription(),
-                wordDto.getPartOfSpeech()
+                wordDto.getHiragana(),
+                wordDto.getKatakana(),
+                wordDto.getKanji(),
+                wordDto.getExample(),
+                wordDto.getTranslation()
         );
     }
 }

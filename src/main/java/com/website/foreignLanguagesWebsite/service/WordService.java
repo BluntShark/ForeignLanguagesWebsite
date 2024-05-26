@@ -11,5 +11,5 @@ public interface WordService {
     List<WordDto> getAllWords();
     WordDto updateWord(Long wordId, WordDto wordDto);
     void deleteWord(Long wordId);
-    List<WordDto> getWordsByUser(UserDto userDto);
+    //List<WordDto> getWordsByUser(UserDto userDto);
 }

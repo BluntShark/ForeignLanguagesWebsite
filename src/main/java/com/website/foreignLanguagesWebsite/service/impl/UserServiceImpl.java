@@ -1,13 +1,10 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
 import com.website.foreignLanguagesWebsite.dto.UserDto;
-import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
 import com.website.foreignLanguagesWebsite.mapper.UserMapper;
-import com.website.foreignLanguagesWebsite.mapper.WordMapper;
 import com.website.foreignLanguagesWebsite.repository.UserRepository;
-import com.website.foreignLanguagesWebsite.repository.WordRepository;
 import com.website.foreignLanguagesWebsite.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -45,7 +42,6 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User is not exists with given id: " + userId));
 
         user.setUsername(userDto.getUsername());
-        user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
         user.setLanguageLevel(userDto.getLanguageLevel());
 
@@ -58,22 +54,4 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User is not exists with given id: " + userId));
         userRepository.deleteById(userId);
     }
-//    @Override
-//    public List<WordDto> getAllWords() {
-//        return wordRepository.findAll().stream().map((word) -> WordMapper.mapToWordDto(word)).collect(Collectors.toUnmodifiableList());
-//    }
-
-//    @Override
-//    public List<UserDto> getAllUsersByWord(Long wordId) {
-//        return UserMapper.mapToUserDto(userRepository.findById(wordId).orElseThrow());
-//    }
-
-    //    //@Override
-//    public List<User> getAllUsersByWordId(Long wordId){
-//        return userRepository.findUsersByWordId(wordId);
-//        //return UserMapper.mapToUserDto(userRepository.findUsersByWordId(wordId));
-//    }
-//    public List<User> getByWord(Word word) {
-//        return userRepository.findUsersByWord(word);
-//    }
 }

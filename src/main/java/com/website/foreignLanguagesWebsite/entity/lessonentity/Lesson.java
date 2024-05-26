@@ -1,15 +1,14 @@
 package com.website.foreignLanguagesWebsite.entity.lessonentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.website.foreignLanguagesWebsite.entity.reference.DifficultlyLevel;
 import com.website.foreignLanguagesWebsite.entity.reference.LessonCategory;
-import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -26,31 +25,16 @@ public class Lesson {
     @Column(name = "content")
     private String content;
     @Column(name = "date_of_creation")
-    private Date dateOfCreation;
+    private String dateOfCreation;
     @Column(name = "duration")
     private Time duration;
-//    @Column(name = "is_completed")
-//    private Boolean isCompleted;
-//    @Column(name = "is_viewed")
-//    private Boolean isViewed;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "difficulty_level_id")
     private DifficultlyLevel difficultlyLevel;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "lesson_category_id")
     private LessonCategory lessonCategory;
-    @OneToOne
-    @JoinColumn(name="test_id")
-    private Test test;
 
-    public Lesson(Long id, String title, String content, Date dateOfCreation,
-                  Time duration, DifficultlyLevel difficultlyLevel, LessonCategory lessonCategory) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.dateOfCreation = dateOfCreation;
-        this.duration = duration;
-        this.difficultlyLevel = difficultlyLevel;
-        this.lessonCategory = lessonCategory;
-    }
 }
