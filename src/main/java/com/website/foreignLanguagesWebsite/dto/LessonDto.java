@@ -15,6 +15,7 @@ public class LessonDto {
     private Long id;
     private String title;
     private String content;
+    String dateOfCreation;
     private Time duration;
     private DifficultlyLevel difficultlyLevel;
     private LessonCategory lessonCategory;
