@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
-import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;

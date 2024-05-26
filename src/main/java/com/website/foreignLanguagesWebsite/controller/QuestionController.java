@@ -27,8 +27,8 @@ public class QuestionController {
         return ResponseEntity.ok(questionService.getQuestionById(questionId));
     }
 
-    @GetMapping
-    public ResponseEntity<List<QuestionDto>> getAllQuestionsByTestId(@PathVariable("testId") Long testId) {
+    @GetMapping("/byTestId/{id}")
+    public ResponseEntity<List<QuestionDto>> getAllQuestionsByTestId(@PathVariable("id") Long testId) {
         return ResponseEntity.ok(questionService.getAllQuestionsByTestId(testId));
     }
 

@@ -3,24 +3,22 @@ package com.website.foreignLanguagesWebsite.mapper;
 import com.website.foreignLanguagesWebsite.dto.TestDto;
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 
-import java.util.stream.Collectors;
-
 public class TestMapper {
     public static TestDto mapToTestDto(Test test) {
-        TestDto testDto = new TestDto();
-        testDto.setId(test.getId());
-        testDto.setName(test.getName());
-        testDto.setLanguageLevel(test.getLanguageLevel());
-        testDto.setQuestions(test.getQuestions().stream().map(QuestionMapper::mapToQuestionDto).collect(Collectors.toList()));
-        return testDto;
+        return new TestDto(
+                test.getId(),
+                test.getName(),
+                test.getLanguageLevel(),
+                test.getQuestions()
+        );
     }
 
     public static Test mapToTest(TestDto testDto) {
-        Test test = new Test();
-        test.setId(testDto.getId());
-        test.setName(testDto.getName());
-        test.setLanguageLevel(testDto.getLanguageLevel());
-        test.setQuestions(testDto.getQuestions().stream().map(QuestionMapper::mapToQuestion).collect(Collectors.toList()));
-        return test;
+        return new Test(
+                testDto.getId(),
+                testDto.getName(),
+                testDto.getLanguageLevel(),
+                testDto.getQuestions()
+        );
     }
 }

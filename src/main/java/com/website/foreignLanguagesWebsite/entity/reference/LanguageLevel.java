@@ -22,9 +22,9 @@ public class LanguageLevel {
     private Long id;
     @Column(name = "title", nullable=false)
     private String title;
-    @OneToMany(mappedBy = "languageLevel")
-    @JsonIgnore
-    private List<User> users;
+//    @OneToMany(mappedBy = "languageLevel")
+//    @JsonIgnore
+//    private List<User> users;
     @OneToMany(mappedBy = "languageLevel")
     @JsonIgnore
     private List<Test> tests;

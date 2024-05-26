@@ -52,6 +52,8 @@ public class QuestionServiceImpl implements QuestionService {
                 .orElseThrow(() -> new ResourceNotFoundException("Question not found with id: " + questionId));
 
         question.setContent(questionDto.getContent());
+        question.setTest(questionDto.getTest());
+        question.setAnswers(questionDto.getAnswers());
 
         return QuestionMapper.mapToQuestionDto(questionRepository.save(question));
     }

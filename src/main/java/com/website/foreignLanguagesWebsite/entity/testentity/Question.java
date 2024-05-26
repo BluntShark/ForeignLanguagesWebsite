@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.entity.testentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,11 +20,10 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "test_id")
     private Test test;
-
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers;
 }

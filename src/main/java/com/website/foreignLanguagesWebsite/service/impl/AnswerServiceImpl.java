@@ -53,6 +53,7 @@ public class AnswerServiceImpl  implements AnswerService {
 
         answer.setContent(answerDto.getContent());
         answer.setCorrect(answerDto.isCorrect());
+        answer.setQuestion(answerDto.getQuestion());
 
         return AnswerMapper.mapToAnswerDto(answerRepository.save(answer));
     }

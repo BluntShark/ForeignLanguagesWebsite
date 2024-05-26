@@ -21,12 +21,10 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "language_level_id")
     private LanguageLevel languageLevel;
-
     @JsonIgnore
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questions;

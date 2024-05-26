@@ -19,13 +19,17 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public TestDto createTest(TestDto testDto) {
-        return TestMapper.mapToTestDto(testRepository.save(TestMapper.mapToTest(testDto)));
+        return TestMapper
+                .mapToTestDto(testRepository
+                        .save(TestMapper
+                                .mapToTest(testDto)));
     }
 
     @Override
     public TestDto getTestById(Long testId) {
         return TestMapper.mapToTestDto(testRepository.findById(testId)
-                .orElseThrow(() -> new ResourceNotFoundException("Test not found with id: " + testId)));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Test not found with id: " + testId)));
     }
 
     @Override
@@ -35,18 +39,20 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public TestDto updateTest(Long testId, TestDto testDto) {
-        Test test = testRepository.findById(testId)
-                .orElseThrow(() -> new ResourceNotFoundException("Test not found with id: " + testId));
+        Test test = testRepository.findById(testId).orElseThrow(() ->
+                new ResourceNotFoundException("Test not found with id: " + testId));
 
         test.setName(testDto.getName());
+        test.setLanguageLevel(testDto.getLanguageLevel());
+        test.setQuestions(testDto.getQuestions());
 
         return TestMapper.mapToTestDto(testRepository.save(test));
     }
 
     @Override
     public void deleteTest(Long testId) {
-        testRepository.findById(testId)
-                .orElseThrow(() -> new ResourceNotFoundException("Test not found with id: " + testId));
+        testRepository.findById(testId).orElseThrow(() ->
+                new ResourceNotFoundException("Test not found with id: " + testId));
         testRepository.deleteById(testId);
     }
 }

@@ -8,8 +8,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -42,7 +42,7 @@ public class Word {
     @JoinTable(name = "userword",
             joinColumns = @JoinColumn(name = "word_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-    private Set<User> users = new HashSet<>();
+    private List<User> users = new ArrayList<>();
 
     public Word(Long id, String wordInRussian, String transcription, String hiragana, String katakana, String kanji, String example, String translation) {
         this.id = id;

@@ -1,10 +1,16 @@
 package com.website.foreignLanguagesWebsite.dto;
 
-import lombok.Data;
+import com.website.foreignLanguagesWebsite.entity.testentity.Question;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class AnswerDto {
     private Long id;
     private String content;
     private boolean isCorrect;
+    private Question question;
 }

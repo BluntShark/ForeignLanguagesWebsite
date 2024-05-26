@@ -7,18 +7,20 @@ import java.util.stream.Collectors;
 
 public class QuestionMapper {
     public static QuestionDto mapToQuestionDto(Question question) {
-        QuestionDto questionDto = new QuestionDto();
-        questionDto.setId(question.getId());
-        questionDto.setContent(question.getContent());
-        questionDto.setAnswers(question.getAnswers().stream().map(AnswerMapper::mapToAnswerDto).collect(Collectors.toList()));
-        return questionDto;
+        return new QuestionDto(
+                question.getId(),
+                question.getContent(),
+                question.getTest(),
+                question.getAnswers()
+        );
     }
 
     public static Question mapToQuestion(QuestionDto questionDto) {
-        Question question = new Question();
-        question.setId(questionDto.getId());
-        question.setContent(questionDto.getContent());
-        question.setAnswers(questionDto.getAnswers().stream().map(AnswerMapper::mapToAnswer).collect(Collectors.toList()));
-        return question;
+        return new Question(
+                questionDto.getId(),
+                questionDto.getContent(),
+                questionDto.getTest(),
+                questionDto.getAnswers()
+        );
     }
 }

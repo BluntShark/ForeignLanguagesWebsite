@@ -2,10 +2,7 @@ package com.website.foreignLanguagesWebsite.dto;
 
 import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,9 +10,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class LanguageLevelDto {
     private Long id;
     private String title;
-    private List<User> users;
     private List<Test> test;
 }
