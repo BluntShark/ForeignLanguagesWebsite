@@ -5,7 +5,6 @@ import com.website.foreignLanguagesWebsite.entity.reference.LessonCategory;
 import lombok.*;
 
 import java.sql.Time;
-import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,6 +15,7 @@ public class LessonDto {
     private String title;
     private String content;
     private Time duration;
+    private String dateOfCreation;
     private DifficultlyLevel difficultlyLevel;
     private LessonCategory lessonCategory;
 }

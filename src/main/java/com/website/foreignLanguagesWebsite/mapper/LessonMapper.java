@@ -10,6 +10,7 @@ public class LessonMapper {
                 lesson.getTitle(),
                 lesson.getContent(),
                 lesson.getDuration(),
+                lesson.getDateOfCreation(),
                 lesson.getDifficultlyLevel(),
                 lesson.getLessonCategory()
         );
@@ -20,6 +21,7 @@ public class LessonMapper {
                 lessonDto.getTitle(),
                 lessonDto.getContent(),
                 lessonDto.getDuration(),
+                lessonDto.getDateOfCreation(),
                 lessonDto.getDifficultlyLevel(),
                 lessonDto.getLessonCategory()
         );

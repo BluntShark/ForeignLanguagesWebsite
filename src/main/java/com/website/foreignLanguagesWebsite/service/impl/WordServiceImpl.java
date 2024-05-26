@@ -59,9 +59,5 @@ public class WordServiceImpl implements WordService{
                 new ResourceNotFoundException("Word is not exists with given id: " + wordId));
         wordRepository.deleteById(wordId);
     }
-//    @Override
-//    public List<WordDto> getWordsByUser(UserDto userDto) {
-//        return wordRepository.findByUsers(userDto);
-//    }
 
 }

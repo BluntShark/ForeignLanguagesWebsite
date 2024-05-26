@@ -44,6 +44,7 @@ public class LessonServiceImpl implements LessonService {
         lesson.setTitle(lessonDto.getTitle());
         lesson.setContent(lesson.getContent());
         lesson.setDuration(lessonDto.getDuration());
+        lesson.setDateOfCreation(lessonDto.getDateOfCreation());
         lesson.setDifficultlyLevel(lessonDto.getDifficultlyLevel());
         lesson.setLessonCategory(lessonDto.getLessonCategory());
         lesson.setTitle(lessonDto.getTitle());
