@@ -8,14 +8,16 @@ public class LanguageLevelMapper {
         return new LanguageLevelDto(
                 languageLevel.getId(),
                 languageLevel.getTitle(),
-                languageLevel.getUsers()
+                languageLevel.getUsers(),
+                languageLevel.getTests()
         );
     }
     public static LanguageLevel mapToLanguageLevel(LanguageLevelDto languageLevelDto){
         return new LanguageLevel(
                 languageLevelDto.getId(),
                 languageLevelDto.getTitle(),
-                languageLevelDto.getUsers()
+                languageLevelDto.getUsers(),
+                languageLevelDto.getTest()
         );
     }
 }

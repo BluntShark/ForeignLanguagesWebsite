@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.dto;
 
+import com.website.foreignLanguagesWebsite.entity.testentity.Test;
 import com.website.foreignLanguagesWebsite.entity.userentity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,4 +17,5 @@ public class LanguageLevelDto {
     private Long id;
     private String title;
     private List<User> users;
+    private List<Test> test;
 }

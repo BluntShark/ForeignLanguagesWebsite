@@ -1,5 +1,7 @@
 package com.website.foreignLanguagesWebsite.entity.testentity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +22,12 @@ public class Test {
     private Long id;
     private String name;
 
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "language_level_id")
+    private LanguageLevel languageLevel;
+
+    @JsonIgnore
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questions;
 }

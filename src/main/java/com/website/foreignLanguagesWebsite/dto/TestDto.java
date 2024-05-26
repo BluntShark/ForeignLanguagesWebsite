@@ -1,5 +1,6 @@
 package com.website.foreignLanguagesWebsite.dto;
 
+import com.website.foreignLanguagesWebsite.entity.reference.LanguageLevel;
 import lombok.Data;
 
 import java.util.List;
@@ -8,5 +9,6 @@ import java.util.List;
 public class TestDto {
     private Long id;
     private String name;
+    private LanguageLevel languageLevel;
     private List<QuestionDto> questions;
 }

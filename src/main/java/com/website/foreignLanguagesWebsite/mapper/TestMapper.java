@@ -10,6 +10,7 @@ public class TestMapper {
         TestDto testDto = new TestDto();
         testDto.setId(test.getId());
         testDto.setName(test.getName());
+        testDto.setLanguageLevel(test.getLanguageLevel());
         testDto.setQuestions(test.getQuestions().stream().map(QuestionMapper::mapToQuestionDto).collect(Collectors.toList()));
         return testDto;
     }
@@ -18,6 +19,7 @@ public class TestMapper {
         Test test = new Test();
         test.setId(testDto.getId());
         test.setName(testDto.getName());
+        test.setLanguageLevel(testDto.getLanguageLevel());
         test.setQuestions(testDto.getQuestions().stream().map(QuestionMapper::mapToQuestion).collect(Collectors.toList()));
         return test;
     }
