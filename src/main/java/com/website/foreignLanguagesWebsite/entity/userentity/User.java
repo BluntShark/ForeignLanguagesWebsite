@@ -9,9 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -49,21 +47,4 @@ public class User {
         this.languageLevel = languageLevel;
         this.words = words;
     }
-    //    @ManyToMany
-//    @JoinTable(name = "userviewedlessons",
-//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
-//    private Set<Lesson> viewedLessons = new HashSet<>();
-//
-//    @ManyToMany
-//    @JoinTable(name = "usercompletedlessons",
-//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "lesson_id", referencedColumnName = "id"))
-//    private Set<Lesson> completedLessons = new HashSet<>();
-//
-//    @ManyToMany
-//    @JoinTable(name = "usercompletedtests",
-//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "test_id", referencedColumnName = "id"))
-//    private Set<Test> completedTests = new HashSet<>();
 }
