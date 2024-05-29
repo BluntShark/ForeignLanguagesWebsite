@@ -47,7 +47,6 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        // Get user details
         Optional<User> optionalUser = userRepository.findByUsername(loginDto.getUsername());
         if (!optionalUser.isPresent()) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -56,7 +55,6 @@ public class AuthController {
         User user = optionalUser.get();
         String role = user.getRoles().stream().findFirst().get().getName(); // Assuming user has one role
 
-        // Prepare response
         Map<String, String> response = new HashMap<>();
         response.put("message", "User signed success");
         response.put("role", role);

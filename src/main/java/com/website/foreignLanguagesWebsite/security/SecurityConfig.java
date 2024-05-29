@@ -38,16 +38,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/register").permitAll()
                         .requestMatchers(HttpMethod.GET,"/**","/login**","/logout**").permitAll()
                         .anyRequest().permitAll()
-
-                        //.anyRequest().authenticated()
-//                                .requestMatchers(HttpMethod.GET, "/auth/**").permitAll()
-//                                .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
-//                                .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();

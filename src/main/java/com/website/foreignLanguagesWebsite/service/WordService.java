@@ -1,8 +1,6 @@
 package com.website.foreignLanguagesWebsite.service;
 
-import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
-
 import java.util.List;
 
 public interface WordService {
@@ -11,5 +9,4 @@ public interface WordService {
     List<WordDto> getAllWords();
     WordDto updateWord(Long wordId, WordDto wordDto);
     void deleteWord(Long wordId);
-    //List<WordDto> getWordsByUser(UserDto userDto);
 }

@@ -1,6 +1,5 @@
 package com.website.foreignLanguagesWebsite.service.impl;
 
-import com.website.foreignLanguagesWebsite.dto.UserDto;
 import com.website.foreignLanguagesWebsite.dto.WordDto;
 import com.website.foreignLanguagesWebsite.entity.wordentity.Word;
 import com.website.foreignLanguagesWebsite.exception.ResourceNotFoundException;
@@ -59,9 +58,4 @@ public class WordServiceImpl implements WordService{
                 new ResourceNotFoundException("Word is not exists with given id: " + wordId));
         wordRepository.deleteById(wordId);
     }
-//    @Override
-//    public List<WordDto> getWordsByUser(UserDto userDto) {
-//        return wordRepository.findByUsers(userDto);
-//    }
-
 }
